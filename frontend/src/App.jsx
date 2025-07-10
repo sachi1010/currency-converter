@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Currency from './components/currency'
+import Currency from './components/Currency'
 
 function App() {
   const [count, setCount] = useState(0)
