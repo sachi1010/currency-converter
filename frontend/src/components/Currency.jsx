@@ -42,7 +42,7 @@ function Currency() {
   setErrorMsg('');
 
   try {
-    const res = await fetch('http://localhost:5000/convert', {
+    const res = await fetch('https://currency-converter-1-xn2q.onrender.com/convert', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount, fromCurrency, toCurrency })
