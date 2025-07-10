@@ -1,0 +1,230 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body background */
+body {
+  background-color: #5299df;
+}
+
+/* Container */
+.converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Image box */
+.box {
+  margin-bottom: 20px;
+  animation: slideUp 0.8s ease forwards;
+}
+
+.box img {
+  max-width: 150px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Data section */
+.data {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 1s ease-in-out 0.5s both;
+}
+
+/* Heading */
+.data h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Input section */
+.input {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.input input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Selects and button */
+.data select {
+  padding: 10px;
+  font-size: 1em;
+  margin: 10px 5px 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 48%;
+  transition: border-color 0.3s ease;
+}
+
+.data select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.data button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Result section */
+.result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.result h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.result p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  margin-top: 40px;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out 1s both;
+}
+
+footer h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .data select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .data button {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+.money-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* allows clicks through it */
+  z-index: 0;
+}
+
+.money-drop {
+  position: absolute;
+  top: -50px;
+  animation: dropMoney 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes dropMoney {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
